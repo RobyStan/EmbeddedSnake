@@ -4,7 +4,7 @@
 **The Snake game** is a classic arcade-style game where players control a snake that grows longer as it consumes food. The objective is to navigate the snake around the playing field, avoiding collisions with walls or its own tail. With each piece of food eaten, the game becomes progressively more challenging as the snake grows longer.
 
 ## General Description
-![Block Diagram](images/schema_Bloc.png)
+![Block Diagram](images/Schema_Bloc.png)
 
 ### Component Description
 **1. Arduino Uno R3:**
@@ -39,7 +39,7 @@
 | **Buzzer**                  | 1                  |
 | **Wires**                 | Multiple           |
 
-![Circuit](images\circuit.png)
+![Circuit](images/circuit.png)
 
 
 
