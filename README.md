@@ -40,8 +40,7 @@
 | **Wires**                 | Multiple           |
 
 ![Circuit](images/circuit.png)
-
-
+![Circuit2](images/circuit2.jpg)
 
 
 
