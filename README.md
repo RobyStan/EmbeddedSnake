@@ -51,6 +51,19 @@
 | **Joystick**              | VCC, GND, VERT (A0), HORZ (A1), SEL (Pin 2) |
 | **Buzzer**                | Pin 9                    |
 
+## Bill of Materials (BOM)
+
+| Component          | Source                  | Datasheet                                |
+|--------------------|-------------------------|------------------------------------------|
+| Arduino Uno R3     | FMI UNIBUC | [Datasheet](https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf) |
+| OLED Display 128x64 | FMI UNIBUC  | [Datasheet](https://www.datasheethub.com/ssd1306-128x64-mono-0-96-inch-i2c-oled-display/) |
+| Analog Joystick    | [Emag](https://www.emag.ro/afisaj-grafic-oled-128x64-0-96-inch-galben-albastru-3874784221572/pd/DGTRPXYBM/)      | [Datasheet](https://www.hwkitchen.cz/user/related_files/joystick-modul-s-tlacitkem-datasheet-pdf.pdf) |
+| Buzzer             | FMI UNIBUC  | [Datasheet](https://components101.com/misc/buzzer-pinout-working-datasheet) |
+
+
+
+
+
 
 ## Software Design
 
