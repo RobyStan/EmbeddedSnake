@@ -61,13 +61,86 @@
 | Buzzer             | FMI UNIBUC  | [Datasheet](https://components101.com/misc/buzzer-pinout-working-datasheet) |
 | Half Breadboard         | FMI UNIBUC  | [Datasheet](https://www.farnell.com/datasheets/1734497.pdf) |
 
-
-
-
-
-
 ## Software Design
+### Development Environment
+- Environment Used: **PlatformIO**
+- Development Board: **Arduino Uno R3**
+- Libraries Used:
+  - **Adafruit_SSD1306**: for graphical display handling on OLED.
+  - **Wire**: for I2C communication between the microcontroller and OLED.
+
+### Algorithms and Structures Implemented
+**1.Main Menu:**
+- **Navigation** between different states **(PLAY, MUSIC, DIFFICULTY)** using the joystick.
+- **Game configuration** is done by moving and pressing the joystick.
+
+**2.Snake Difficulty:**<br>
+- Adjusting snake speed (EASY, MEDIUM, HARD) by modifying the global variable **snakeSpeed**.
+
+**3.Gameplay:**<br>
+- **Snake Movement:** Implemented as a list of coordinates representing each segment's position.
+- **Collisions:** Detecting snake collisions with screen boundaries or its own body.
+- **Food Generation:** Random positioning of food on the screen.
+
+**4.Sound:**<br>
+- **Activating/Deactivating sound** from the MUSIC menu using a buzzer connected to the microcontroller.
+
+**5.Hardware Interactions:**<br>
+- **Joystick** is used for movement, menu navigation, and selection.
+- **Buzzer** provides sound feedback.
+
+### Sources and Functions Implemented
+**1. File: main.cpp**
+- **Main Functions:**
+  - **setup():** Initializes the OLED display, joystick, and menu.
+  - **loop():** Controls the application's states (menu, gameplay, gameOver, gameWin).
+  - **joyInterrupt():** Handles joystick press using interrupts.
+- **Global Variables:**
+  - **snakeSpeed:** Controls the snake's speed.
+
+**2. File: menu.cpp**
+- **Functions:**
+- **initMenu():** Displays the start screen.
+- **menuLoop():** Handles navigation between menu states.
+
+**3. File: game.cpp**
+- **Main Functions:**
+  - **moveSnake():** Updates the snake's position based on direction.
+  - **checkCollision():** Detects collisions and ends the game in case of a collision.
+  - **checkFoodCollision():** Checks if the snake ate food and generates new food.
+  - **drawGame():** Draws the game on the display (snake, food).
+
+**4. File: constants.h**  
+- Defines hardware pins (joystick, buzzer, I2C).
+- Sets up the OLED screen's size and other hardware parameters.
 
 ## Results 
+[![Snake](image.png)](https://youtube.com/shorts/NdBCbCFs7JU)
 
 ## Conclusions
+### Concepts learned during laboratories and applied to the project:
+**1.PWM:** 
+- PWM was used to control the buzzer, enabling the generation of different tones by varying the frequency
+
+**2.ADC:**
+- ADC was utilized to read joystick inputs, converting analog signals from the joystick's vertical and horizontal axes into digital values. These values were then used to navigate the menu system and control game mechanics.
+
+**3.Interrupt:**
+- Interrupts were employed to detect joystick button presses. This ensured quick and efficient response times by triggering specific actions, like starting the game
+
+**4.I2C:**
+- I2C communication was used to interface with the OLED display.
+
+
+
+## Resources
+### Hardware resources:
+[Buzzer](https://projecthub.arduino.cc/SURYATEJA/use-a-buzzer-module-piezo-speaker-using-arduino-uno-cf4191)<br>
+[Joystick](https://docs.arduino.cc/built-in-examples/usb/JoystickMouseControl/)<br>
+[OLED Display](https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/)
+
+### Software resources: 
+[LED Matrix Editor](https://xantorohara.github.io/led-matrix-editor/#)<br>
+[Photopea](https://www.photopea.com/)<br>
+[Arduino OLED Menu](https://github.com/upiir/arduino_oled_menu?tab=readme-ov-file)<br>
+[image2cpp](https://javl.github.io/image2cpp/)
